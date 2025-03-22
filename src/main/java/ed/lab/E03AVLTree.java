@@ -64,7 +64,10 @@ public class E03AVLTree<T> {
         } else if (cmp > 0) {
             node.right = delete(node.right, value);
         } else {
-            size--;
+            if (node.left == null || node.right == null) {
+                size--;
+            }
+
             if (node.left == null) return node.right;
             if (node.right == null) return node.left;
 
@@ -74,7 +77,6 @@ public class E03AVLTree<T> {
         }
 
         node.height = 1 + Math.max(height(node.left), height(node.right));
-        System.out.println("Balanceando nodo tras eliminación: " + node.value);
         return balance(node);
     }
 
