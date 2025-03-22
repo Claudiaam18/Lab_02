@@ -26,6 +26,25 @@ public class Main {
 
         System.out.println("EJERCICIO 2");
         System.out.println("\nEl " + k + "° elemento más pequeño es: " + kthSmallest);
+
+        System.out.println("EJERCICIO 3");
+
+        E03AVLTree<Integer> avlTree = new E03AVLTree<>(Integer::compare);
+
+        System.out.println("Buscar 5 en AVL: " + avlTree.search(5));
+        avlTree.insert(5);
+        avlTree.insert(3);
+        avlTree.insert(1);
+        System.out.println("Buscar 5 en AVL: " + avlTree.search(5));
+        System.out.println("Buscar 1 en AVL: " + avlTree.search(1));
+        System.out.println("Tamaño del AVL: " + avlTree.size());
+        System.out.println("Altura del AVL: " + avlTree.height());
+
+        avlTree.delete(3);
+        System.out.println("Buscar 3 en AVL tras eliminar: " + avlTree.search(3));
+
+        avlTree.insert(4);
+        System.out.println("Buscar 4 en AVL tras insertar: " + avlTree.search(4));
     }
 
     private static void printTree(TreeNode<Integer> node) {
