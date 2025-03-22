@@ -10,14 +10,22 @@ public class Main {
         root.right.left = new TreeNode<>(6);
         root.right.right = new TreeNode<>(9);
 
+        System.out.println("EJERCICIO 1");
         System.out.println("Árbol original:");
         printTree(root);
+
+        int k = 3;
+        E02KthSmallest kthFinder = new E02KthSmallest();
+        int kthSmallest = kthFinder.kthSmallest(root, k);
 
         E01InvertBT inverter = new E01InvertBT();
         TreeNode<Integer> invertedRoot = inverter.invertTree(root);
 
         System.out.println("\nÁrbol invertido:");
         printTree(invertedRoot);
+
+        System.out.println("EJERCICIO 2");
+        System.out.println("\nEl " + k + "° elemento más pequeño es: " + kthSmallest);
     }
 
     private static void printTree(TreeNode<Integer> node) {
@@ -28,5 +36,6 @@ public class Main {
                 (node.right != null) ? node.right.value : "null");
         printTree(node.left);
         printTree(node.right);
+
     }
 }
