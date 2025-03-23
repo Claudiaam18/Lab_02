@@ -44,7 +44,7 @@ public class Main {
         System.out.println("Buscar 3 en AVL tras eliminar: " + avlTree.search(3));
 
         avlTree.insert(4);
-        System.out.println("Buscar 4 en AVL tras insertar: " + avlTree.search(4));
+        System.out.println("Buscar 4 en AVL después de insertar: " + avlTree.search(4));
     }
 
     private static void printTree(TreeNode<Integer> node) {
